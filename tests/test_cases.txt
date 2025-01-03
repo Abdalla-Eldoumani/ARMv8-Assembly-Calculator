@@ -1,0 +1,161 @@
+# ARMv8 Calculator Test Cases
+# Format: Input -> Expected Output
+
+## 1. Basic Operations
+1.1 Basic Addition
+Input: 5 + 3
+Expected: 8.00000000
+
+1.2 Basic Subtraction
+Input: 10 - 4
+Expected: 6.00000000
+
+1.3 Basic Multiplication
+Input: 6 * 7
+Expected: 42.00000000
+
+1.4 Basic Division
+Input: 15 / 3
+Expected: 5.00000000
+
+## 2. Decimal Numbers
+2.1 Decimal Addition
+Input: 3.14 + 2.86
+Expected: 6.00000000
+
+2.2 Decimal Subtraction
+Input: 5.5 - 2.2
+Expected: 3.30000000
+
+2.3 Complex Decimals
+Input: 0.1 + 0.2
+Expected: 0.30000000
+
+2.4 Multiple Decimal Points
+Input: 1.2.3 + 4
+Expected: Error: Invalid number format!
+
+## 3. Negative Numbers
+3.1 Negative Addition
+Input: -5 + -3
+Expected: -8.00000000
+
+3.2 Mixed Signs
+Input: -10 + 7
+Expected: -3.00000000
+
+3.3 Negative Multiplication
+Input: -4 * -3
+Expected: 12.00000000
+
+3.4 Negative Division
+Input: -15 / 3
+Expected: -5.00000000
+
+## 4. Zero Cases
+4.1 Division by Zero
+Input: 5 / 0
+Expected: Error: Division by zero!
+
+4.2 Zero Division
+Input: 0 / 5
+Expected: 0.00000000
+
+4.3 Zero Operations
+Input: 0 + 0
+Expected: 0.00000000
+
+## 5. Input Validation
+5.1 Invalid Characters
+Input: abc + 5
+Expected: Error: Invalid number format!
+
+5.2 Special Characters
+Input: @#$ + 2
+Expected: Error: Invalid number format!
+
+5.3 Mixed Valid/Invalid
+Input: 5a + 3
+Expected: Error: Invalid number format!
+
+5.4 Invalid Operator
+Input: 5 $ 3
+Expected: Error: Invalid operator!
+
+## 6. Whitespace Handling
+6.1 Leading Spaces
+Input: "   5 + 3"
+Expected: 8.00000000
+
+6.2 Trailing Spaces
+Input: "5 + 3   "
+Expected: 8.00000000
+
+6.3 Mixed Spaces
+Input: "  5   +   3  "
+Expected: 8.00000000
+
+## 7. Length Limits
+7.1 Maximum Length
+Input: 12345678901234567890 + 1
+Expected: Error: Input too long!
+
+7.2 Long Decimal
+Input: 1.234567890123456789 + 1
+Expected: Error: Input too long!
+
+## 8. Edge Cases
+8.1 Empty Input
+Input: "" + 5
+Expected: Error: Invalid number format!
+
+8.2 Only Decimal Point
+Input: . + 5
+Expected: Error: Invalid number format!
+
+8.3 Leading Decimal
+Input: .5 + 2
+Expected: 2.50000000
+
+8.4 Trailing Decimal
+Input: "5. + 2"
+Expected: 7.00000000
+
+## 9. Precision Tests
+9.1 Large Numbers
+Input: 999999999 + 1
+Expected: 1000000000.00000000
+
+9.2 Small Decimals
+Input: 0.000000001 + 0.000000002
+Expected: 0.00000000
+
+9.3 Repeated Decimals
+Input: 1 / 3
+Expected: 0.33333333
+
+## 10. Special Input Sequences
+10.1 Multiple Leading Zeros
+Input: 00005 + 3
+Expected: 8.00000000
+
+10.2 Multiple Negative Signs
+Input: --5 + 3
+Expected: Error: Invalid number format!
+
+10.3 Mixed Whitespace
+Input: "5\t \n+\t \n3"
+Expected: Error: Invalid number format!
+
+# Test Execution Instructions
+1. Run each test case in sequence
+2. Compare actual output with expected output
+3. Document any discrepancies
+4. Note any system-specific behavior
+5. Verify error message consistency
+
+# Additional Notes
+- All results show 8 decimal places
+- Whitespace handling may vary by system
+- Error messages should be exact matches
+- Input strings shown in quotes are for clarity
